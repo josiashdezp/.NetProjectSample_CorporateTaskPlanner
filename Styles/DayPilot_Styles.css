@@ -1,0 +1,40 @@
+﻿.ContextMenu_main
+{
+	background-color:#FFFFC0;
+	font-family: Verdana, Tahoma, Sans-serif;
+	font-size: 8.8pt;
+	border: 1px solid gray;		
+	padding: 0px;
+	cursor: default;		
+	}
+
+.ContextMenu_main a
+{
+	color: #7BABD2;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.ContextMenu_main a:hover
+{
+	background-color: #BFD7EA;
+}
+	
+.ContextMenu_main a span 
+{
+	display: block;
+	height: 20px;
+	line-height: 20px;
+	width: 120px; 
+	overflow:visible;
+	padding:1px 10px 1px 10px;			
+	text-align:left;
+}
+/*
+.ContextMenu_main div div  /* Separator 
+{
+	border-top: 1px solid #dddddd;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-left: 28px;
+}*/
