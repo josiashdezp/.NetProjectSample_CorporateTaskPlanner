@@ -1,0 +1,1229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet_Planificador_Informes" targetNamespace="http://tempuri.org/DataSet_Planificador_Informes.xsd" xmlns:mstns="http://tempuri.org/DataSet_Planificador_Informes.xsd" xmlns="http://tempuri.org/DataSet_Planificador_Informes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="BDPlanificadorConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BDPlanificadorConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.BDPlanificadorConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="view_PlanAccionesPrevencionTableAdapter" GeneratorDataComponentClassName="view_PlanAccionesPrevencionTableAdapter" Name="view_PlanAccionesPrevencion" UserDataComponentName="view_PlanAccionesPrevencionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDPlanificadorConnectionString (Web.config)" DbObjectName="BDPlanificador.dbo.view_PlanAccionesPrevencion" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT PlanificadorNombre, EjecutaNombre, ResponsableNombre, NID, PlanID, AnioID, FechaPlanificada, FechaInicio, FechaCierre, Observaciones, Descripcion, PuntoVulnerable, Manifestacion, Cumplimiento, EjecucionID, Riesgos, PlanificadorCargo, EjecutaCargo, ResponsableCargo, Nombre FROM dbo.view_PlanAccionesPrevencion</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PlanificadorNombre" DataSetColumn="PlanificadorNombre" />
+              <Mapping SourceColumn="EjecutaNombre" DataSetColumn="EjecutaNombre" />
+              <Mapping SourceColumn="ResponsableNombre" DataSetColumn="ResponsableNombre" />
+              <Mapping SourceColumn="NID" DataSetColumn="NID" />
+              <Mapping SourceColumn="PlanID" DataSetColumn="PlanID" />
+              <Mapping SourceColumn="AnioID" DataSetColumn="AnioID" />
+              <Mapping SourceColumn="FechaPlanificada" DataSetColumn="FechaPlanificada" />
+              <Mapping SourceColumn="Nombre" DataSetColumn="Nombre" />
+              <Mapping SourceColumn="FechaInicio" DataSetColumn="FechaInicio" />
+              <Mapping SourceColumn="FechaCierre" DataSetColumn="FechaCierre" />
+              <Mapping SourceColumn="Observaciones" DataSetColumn="Observaciones" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="PuntoVulnerable" DataSetColumn="PuntoVulnerable" />
+              <Mapping SourceColumn="Manifestacion" DataSetColumn="Manifestacion" />
+              <Mapping SourceColumn="Cumplimiento" DataSetColumn="Cumplimiento" />
+              <Mapping SourceColumn="EjecucionID" DataSetColumn="EjecucionID" />
+              <Mapping SourceColumn="Riesgos" DataSetColumn="Riesgos" />
+              <Mapping SourceColumn="PlanificadorCargo" DataSetColumn="PlanificadorCargo" />
+              <Mapping SourceColumn="EjecutaCargo" DataSetColumn="EjecutaCargo" />
+              <Mapping SourceColumn="ResponsableCargo" DataSetColumn="ResponsableCargo" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="BDPlanificadorConnectionString (Web.config)" DbObjectName="BDPlanificador.dbo.view_PlanAccionesPrevencion" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy_YearAndMonth" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy_YearAndMonth" GeneratorSourceName="FillBy_YearAndMonth" GetMethodModifier="Public" GetMethodName="GetDataBy_YearAndMonth" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy_YearAndMonth" UserSourceName="FillBy_YearAndMonth">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     AnioID, Cumplimiento, Descripcion, EjecucionID, EjecutaCargo, EjecutaNombre, FechaCierre, FechaInicio, FechaPlanificada, Manifestacion, NID, 
+                      Nombre, Observaciones, PlanID, PlanificadorCargo, PlanificadorNombre, PuntoVulnerable, ResponsableCargo, ResponsableNombre, Riesgos
+FROM         dbo.view_PlanAccionesPrevencion
+WHERE     (MONTH(FechaPlanificada) = @Mes) AND (AnioID = @Anio)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Mes" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="Decimal" Direction="Input" ParameterName="@Mes" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Anio" ColumnName="AnioID" DataSourceName="BDPlanificador.dbo.view_PlanAccionesPrevencion" DataTypeServer="char(4)" DbType="AnsiString" Direction="Input" ParameterName="@Anio" Precision="0" ProviderType="Char" Scale="0" Size="4" SourceColumn="AnioID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="view_PlanCapacitacionTableAdapter" GeneratorDataComponentClassName="view_PlanCapacitacionTableAdapter" Name="view_PlanCapacitacion" UserDataComponentName="view_PlanCapacitacionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDPlanificadorConnectionString (Web.config)" DbObjectName="BDPlanificador.dbo.view_PlanCapacitacion" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     view_PlanCapacitacion.*
+FROM         view_PlanCapacitacion</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Nombre" DataSetColumn="Nombre" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Nivel" DataSetColumn="Nivel" />
+              <Mapping SourceColumn="Cargo" DataSetColumn="Cargo" />
+              <Mapping SourceColumn="EsReserva" DataSetColumn="EsReserva" />
+              <Mapping SourceColumn="EsCuadro" DataSetColumn="EsCuadro" />
+              <Mapping SourceColumn="NID_Jefe" DataSetColumn="NID_Jefe" />
+              <Mapping SourceColumn="AnioID" DataSetColumn="AnioID" />
+              <Mapping SourceColumn="NID" DataSetColumn="NID" />
+              <Mapping SourceColumn="NombreCompleto" DataSetColumn="NombreCompleto" />
+              <Mapping SourceColumn="NombreArea" DataSetColumn="NombreArea" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="view_PlanFormacionTableAdapter" GeneratorDataComponentClassName="view_PlanFormacionTableAdapter" Name="view_PlanFormacion" UserDataComponentName="view_PlanFormacionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDPlanificadorConnectionString (Web.config)" DbObjectName="BDPlanificador.dbo.view_PlanFormacion" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     *
+FROM         view_PlanFormacion</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NombreCompleto" DataSetColumn="NombreCompleto" />
+              <Mapping SourceColumn="Cargo" DataSetColumn="Cargo" />
+              <Mapping SourceColumn="Titulo" DataSetColumn="Titulo" />
+              <Mapping SourceColumn="NombreArea" DataSetColumn="NombreArea" />
+              <Mapping SourceColumn="Nombre" DataSetColumn="Nombre" />
+              <Mapping SourceColumn="Objetivo" DataSetColumn="Objetivo" />
+              <Mapping SourceColumn="EsReservaDesde" DataSetColumn="EsReservaDesde" />
+              <Mapping SourceColumn="EsReservaDeCargo" DataSetColumn="EsReservaDeCargo" />
+              <Mapping SourceColumn="ExperienciaBancaria" DataSetColumn="ExperienciaBancaria" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="PlanID" DataSetColumn="PlanID" />
+              <Mapping SourceColumn="Anio" DataSetColumn="Anio" />
+              <Mapping SourceColumn="NID" DataSetColumn="NID" />
+              <Mapping SourceColumn="FechaInicio" DataSetColumn="FechaInicio" />
+              <Mapping SourceColumn="FechaCierre" DataSetColumn="FechaCierre" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="BDPlanificadorConnectionString (Web.config)" DbObjectName="BDPlanificador.dbo.view_PlanFormacion" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByYear" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByYear" GeneratorSourceName="FillByYear" GetMethodModifier="Public" GetMethodName="GetDataByYear" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByYear" UserSourceName="FillByYear">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     *
+FROM         view_PlanFormacion where Anio = @Anio</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Anio" ColumnName="Anio" DataSourceName="BDPlanificador.dbo.view_PlanFormacion" DataTypeServer="char(4)" DbType="AnsiString" Direction="Input" ParameterName="@Anio" Precision="0" ProviderType="Char" Scale="0" Size="4" SourceColumn="Anio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MostrarTareasDelMesPorPlanIDTableAdapter" GeneratorDataComponentClassName="MostrarTareasDelMesPorPlanIDTableAdapter" Name="MostrarTareasDelMesPorPlanID" UserDataComponentName="MostrarTareasDelMesPorPlanIDTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDPlanificadorConnectionString (Web.config)" DbObjectName="BDPlanificador.dbo.stp_MostrarTareasDelMesPorPlanID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.stp_MostrarTareasDelMesPorPlanID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Mes" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@PlanID" Precision="5" ProviderType="SmallInt" Scale="0" Size="2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@NID" Precision="0" ProviderType="Char" Scale="0" Size="11" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Anio" Precision="0" ProviderType="Char" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EjecucionID" DataSetColumn="EjecucionID" />
+              <Mapping SourceColumn="PlanID" DataSetColumn="PlanID" />
+              <Mapping SourceColumn="AnioID" DataSetColumn="AnioID" />
+              <Mapping SourceColumn="NID" DataSetColumn="NID" />
+              <Mapping SourceColumn="AccionID" DataSetColumn="AccionID" />
+              <Mapping SourceColumn="NombreAccion" DataSetColumn="NombreAccion" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Observaciones" DataSetColumn="Observaciones" />
+              <Mapping SourceColumn="FechaPlanificada" DataSetColumn="FechaPlanificada" />
+              <Mapping SourceColumn="FechaCierra" DataSetColumn="FechaCierra" />
+              <Mapping SourceColumn="FechaEjecutada" DataSetColumn="FechaEjecutada" />
+              <Mapping SourceColumn="TipoAccion" DataSetColumn="TipoAccion" />
+              <Mapping SourceColumn="NID_Ejecuta" DataSetColumn="NID_Ejecuta" />
+              <Mapping SourceColumn="NID_Responsable" DataSetColumn="NID_Responsable" />
+              <Mapping SourceColumn="PlanificadorNombre" DataSetColumn="PlanificadorNombre" />
+              <Mapping SourceColumn="EjecutaNombre" DataSetColumn="EjecutaNombre" />
+              <Mapping SourceColumn="EjecutaUserName" DataSetColumn="EjecutaUserName" />
+              <Mapping SourceColumn="ResponsableNombre" DataSetColumn="ResponsableNombre" />
+              <Mapping SourceColumn="FechaNotificar" DataSetColumn="FechaNotificar" />
+              <Mapping SourceColumn="Notificada" DataSetColumn="Notificada" />
+              <Mapping SourceColumn="Aprobada" DataSetColumn="Aprobada" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
+              <Mapping SourceColumn="EstadoColor" DataSetColumn="EstadoColor" />
+              <Mapping SourceColumn="TipoID" DataSetColumn="TipoID" />
+              <Mapping SourceColumn="Detalles" DataSetColumn="Detalles" />
+              <Mapping SourceColumn="NombrePlan" DataSetColumn="NombrePlan" />
+              <Mapping SourceColumn="EjecutaCargo" DataSetColumn="EjecutaCargo" />
+              <Mapping SourceColumn="ResponsableCargo" DataSetColumn="ResponsableCargo" />
+              <Mapping SourceColumn="PlanificadorCargo" DataSetColumn="PlanificadorCargo" />
+              <Mapping SourceColumn="OtrosImplicados" DataSetColumn="OtrosImplicados" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MostrarEjecucionDeTareasPorTrabajadorTableAdapter" GeneratorDataComponentClassName="MostrarEjecucionDeTareasPorTrabajadorTableAdapter" Name="MostrarEjecucionDeTareasPorTrabajador" UserDataComponentName="MostrarEjecucionDeTareasPorTrabajadorTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDPlanificadorConnectionString (Web.config)" DbObjectName="BDPlanificador.dbo.stp_MostrarEjecucionDeTareasPorTrabajador" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill_EjecucionDeTareasPorTrabajador" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData_EjecucionDeTareasPorTrabajador" GeneratorSourceName="Fill_EjecucionDeTareasPorTrabajador" GetMethodModifier="Public" GetMethodName="GetData_EjecucionDeTareasPorTrabajador" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_EjecucionDeTareasPorTrabajador" UserSourceName="Fill_EjecucionDeTareasPorTrabajador">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.stp_MostrarEjecucionDeTareasPorTrabajador</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Anio" Precision="0" ProviderType="Char" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Mes" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PlanID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@NID_Trabajador" Precision="0" ProviderType="Char" Scale="0" Size="11" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@NID_Jefe" Precision="0" ProviderType="Char" Scale="0" Size="11" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EjecucionID" DataSetColumn="EjecucionID" />
+              <Mapping SourceColumn="PlanID" DataSetColumn="PlanID" />
+              <Mapping SourceColumn="AnioID" DataSetColumn="AnioID" />
+              <Mapping SourceColumn="NID" DataSetColumn="NID" />
+              <Mapping SourceColumn="AccionID" DataSetColumn="AccionID" />
+              <Mapping SourceColumn="NombreAccion" DataSetColumn="NombreAccion" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Observaciones" DataSetColumn="Observaciones" />
+              <Mapping SourceColumn="FechaPlanificada" DataSetColumn="FechaPlanificada" />
+              <Mapping SourceColumn="FechaCierra" DataSetColumn="FechaCierra" />
+              <Mapping SourceColumn="FechaEjecutada" DataSetColumn="FechaEjecutada" />
+              <Mapping SourceColumn="TipoAccion" DataSetColumn="TipoAccion" />
+              <Mapping SourceColumn="NID_Ejecuta" DataSetColumn="NID_Ejecuta" />
+              <Mapping SourceColumn="NID_Responsable" DataSetColumn="NID_Responsable" />
+              <Mapping SourceColumn="PlanificadorNombre" DataSetColumn="PlanificadorNombre" />
+              <Mapping SourceColumn="EjecutaNombre" DataSetColumn="EjecutaNombre" />
+              <Mapping SourceColumn="EjecutaUserName" DataSetColumn="EjecutaUserName" />
+              <Mapping SourceColumn="ResponsableNombre" DataSetColumn="ResponsableNombre" />
+              <Mapping SourceColumn="FechaNotificar" DataSetColumn="FechaNotificar" />
+              <Mapping SourceColumn="Notificada" DataSetColumn="Notificada" />
+              <Mapping SourceColumn="Aprobada" DataSetColumn="Aprobada" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
+              <Mapping SourceColumn="EstadoColor" DataSetColumn="EstadoColor" />
+              <Mapping SourceColumn="TipoID" DataSetColumn="TipoID" />
+              <Mapping SourceColumn="Detalles" DataSetColumn="Detalles" />
+              <Mapping SourceColumn="NombrePlan" DataSetColumn="NombrePlan" />
+              <Mapping SourceColumn="NID_Jefe" DataSetColumn="NID_Jefe" />
+              <Mapping SourceColumn="EjecutaCargo" DataSetColumn="EjecutaCargo" />
+              <Mapping SourceColumn="ResponsableCargo" DataSetColumn="ResponsableCargo" />
+              <Mapping SourceColumn="PlanificadorCargo" DataSetColumn="PlanificadorCargo" />
+              <Mapping SourceColumn="OtrosImplicados" DataSetColumn="OtrosImplicados" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="view_EjecucionDeTareasTableAdapter" GeneratorDataComponentClassName="view_EjecucionDeTareasTableAdapter" Name="view_EjecucionDeTareas" UserDataComponentName="view_EjecucionDeTareasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDPlanificadorConnectionString (Web.config)" DbObjectName="PlanPlus.dbo.view_EjecucionDeTareas" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     dbo.view_EjecucionDeTareas.*
+FROM         dbo.view_EjecucionDeTareas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EjecucionID" DataSetColumn="EjecucionID" />
+              <Mapping SourceColumn="PlanID" DataSetColumn="PlanID" />
+              <Mapping SourceColumn="AnioID" DataSetColumn="AnioID" />
+              <Mapping SourceColumn="NID" DataSetColumn="NID" />
+              <Mapping SourceColumn="AccionID" DataSetColumn="AccionID" />
+              <Mapping SourceColumn="NombreAccion" DataSetColumn="NombreAccion" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Observaciones" DataSetColumn="Observaciones" />
+              <Mapping SourceColumn="FechaPlanificada" DataSetColumn="FechaPlanificada" />
+              <Mapping SourceColumn="FechaCierra" DataSetColumn="FechaCierra" />
+              <Mapping SourceColumn="FechaEjecutada" DataSetColumn="FechaEjecutada" />
+              <Mapping SourceColumn="TipoAccion" DataSetColumn="TipoAccion" />
+              <Mapping SourceColumn="NID_Ejecuta" DataSetColumn="NID_Ejecuta" />
+              <Mapping SourceColumn="NID_Responsable" DataSetColumn="NID_Responsable" />
+              <Mapping SourceColumn="PlanificadorNombre" DataSetColumn="PlanificadorNombre" />
+              <Mapping SourceColumn="EjecutaNombre" DataSetColumn="EjecutaNombre" />
+              <Mapping SourceColumn="EjecutaUserName" DataSetColumn="EjecutaUserName" />
+              <Mapping SourceColumn="ResponsableNombre" DataSetColumn="ResponsableNombre" />
+              <Mapping SourceColumn="FechaNotificar" DataSetColumn="FechaNotificar" />
+              <Mapping SourceColumn="Notificada" DataSetColumn="Notificada" />
+              <Mapping SourceColumn="Aprobada" DataSetColumn="Aprobada" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
+              <Mapping SourceColumn="EstadoColor" DataSetColumn="EstadoColor" />
+              <Mapping SourceColumn="TipoID" DataSetColumn="TipoID" />
+              <Mapping SourceColumn="Detalles" DataSetColumn="Detalles" />
+              <Mapping SourceColumn="NombrePlan" DataSetColumn="NombrePlan" />
+              <Mapping SourceColumn="EjecutaCargo" DataSetColumn="EjecutaCargo" />
+              <Mapping SourceColumn="ResponsableCargo" DataSetColumn="ResponsableCargo" />
+              <Mapping SourceColumn="PlanificadorCargo" DataSetColumn="PlanificadorCargo" />
+              <Mapping SourceColumn="OtrosImplicados" DataSetColumn="OtrosImplicados" />
+              <Mapping SourceColumn="EsPrincipal" DataSetColumn="EsPrincipal" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="BDPlanificadorConnectionString (Web.config)" DbObjectName="PlanPlus.dbo.view_EjecucionDeTareas" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy_EjecucionID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy_EjecucionID" GeneratorSourceName="FillBy_EjecucionID" GetMethodModifier="Public" GetMethodName="GetDataBy_EjecucionID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy_EjecucionID" UserSourceName="FillBy_EjecucionID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT AccionID, AnioID, Aprobada, Descripcion, Detalles, EjecucionID, EjecutaCargo, EjecutaNombre, EjecutaUserName, EsPrincipal, Estado, EstadoColor, FechaCierra, FechaEjecutada, FechaNotificar, FechaPlanificada, NID, NID_Ejecuta, NID_Responsable, NombreAccion, NombrePlan, Notificada, Observaciones, OtrosImplicados, PlanID, PlanificadorCargo, PlanificadorNombre, ResponsableCargo, ResponsableNombre, TipoAccion, TipoID,EsPrincipal FROM view_EjecucionDeTareas WHERE (EjecucionID = @EjecucionID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="EjecucionID" ColumnName="EjecucionID" DataSourceName="PlanPlus.dbo.view_EjecucionDeTareas" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@EjecucionID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="EjecucionID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="BDPlanificadorConnectionString (Web.config)" DbObjectName="PlanPlus.dbo.view_EjecucionDeTareas" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy_FechaEjecucion" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy_FechaEjecucion" GeneratorSourceName="FillBy_FechaEjecucion" GetMethodModifier="Public" GetMethodName="GetDataBy_FechaEjecucion" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy_FechaEjecucion" UserSourceName="FillBy_FechaEjecucion">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     EjecucionID, PlanID, AnioID, NID, AccionID, NombreAccion, Descripcion, Observaciones, FechaPlanificada, FechaCierra, FechaEjecutada, TipoAccion, 
+                      NID_Ejecuta, NID_Responsable, PlanificadorNombre, EjecutaNombre, EjecutaUserName, ResponsableNombre, FechaNotificar, Notificada, Aprobada, 
+                      Estado, EstadoColor, TipoID, Detalles, NombrePlan, EjecutaCargo, ResponsableCargo, PlanificadorCargo, OtrosImplicados,EsPrincipal
+FROM         view_EjecucionDeTareas
+WHERE     (FechaPlanificada BETWEEN @FechaInicio AND @FechaFin)
+ORDER BY FechaPlanificada</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="FechaInicio" ColumnName="FechaPlanificada" DataSourceName="PlanPlus.dbo.view_EjecucionDeTareas" DataTypeServer="smalldatetime" DbType="DateTime" Direction="Input" ParameterName="@FechaInicio" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="4" SourceColumn="FechaPlanificada" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="FechaFin" ColumnName="FechaPlanificada" DataSourceName="PlanPlus.dbo.view_EjecucionDeTareas" DataTypeServer="smalldatetime" DbType="DateTime" Direction="Input" ParameterName="@FechaFin" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="4" SourceColumn="FechaPlanificada" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_CumplimientoEjecucionTableAdapter" GeneratorDataComponentClassName="View_CumplimientoEjecucionTableAdapter" Name="View_CumplimientoEjecucion" UserDataComponentName="View_CumplimientoEjecucionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDPlanificadorConnectionString (Web.config)" DbObjectName="PlanPlus.dbo.View_CumplimientoEjecucion" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     EjecucionID, PlanID, AnioID, NID, AccionID, Observaciones, FechaPlanificada, FechaCierra, FechaEjecutada, NID_Ejecuta, NID_Responsable, 
+                      PlanificadorNombre, EjecutaNombre, ResponsableNombre, Estado, Detalles, EjecutaCargo, ResponsableCargo, PlanificadorCargo, NombreArea
+FROM         View_CumplimientoEjecucion</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EjecucionID" DataSetColumn="EjecucionID" />
+              <Mapping SourceColumn="PlanID" DataSetColumn="PlanID" />
+              <Mapping SourceColumn="AnioID" DataSetColumn="AnioID" />
+              <Mapping SourceColumn="NID" DataSetColumn="NID" />
+              <Mapping SourceColumn="AccionID" DataSetColumn="AccionID" />
+              <Mapping SourceColumn="Observaciones" DataSetColumn="Observaciones" />
+              <Mapping SourceColumn="FechaPlanificada" DataSetColumn="FechaPlanificada" />
+              <Mapping SourceColumn="FechaCierra" DataSetColumn="FechaCierra" />
+              <Mapping SourceColumn="FechaEjecutada" DataSetColumn="FechaEjecutada" />
+              <Mapping SourceColumn="NID_Ejecuta" DataSetColumn="NID_Ejecuta" />
+              <Mapping SourceColumn="NID_Responsable" DataSetColumn="NID_Responsable" />
+              <Mapping SourceColumn="PlanificadorNombre" DataSetColumn="PlanificadorNombre" />
+              <Mapping SourceColumn="EjecutaNombre" DataSetColumn="EjecutaNombre" />
+              <Mapping SourceColumn="ResponsableNombre" DataSetColumn="ResponsableNombre" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
+              <Mapping SourceColumn="Detalles" DataSetColumn="Detalles" />
+              <Mapping SourceColumn="EjecutaCargo" DataSetColumn="EjecutaCargo" />
+              <Mapping SourceColumn="ResponsableCargo" DataSetColumn="ResponsableCargo" />
+              <Mapping SourceColumn="PlanificadorCargo" DataSetColumn="PlanificadorCargo" />
+              <Mapping SourceColumn="NombreArea" DataSetColumn="NombreArea" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet_Planificador_Informes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet_Planificador_Informes" msprop:Generator_DataSetName="DataSet_Planificador_Informes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="view_PlanAccionesPrevencion" msprop:Generator_UserTableName="view_PlanAccionesPrevencion" msprop:Generator_RowDeletedName="view_PlanAccionesPrevencionRowDeleted" msprop:Generator_RowChangedName="view_PlanAccionesPrevencionRowChanged" msprop:Generator_RowClassName="view_PlanAccionesPrevencionRow" msprop:Generator_RowChangingName="view_PlanAccionesPrevencionRowChanging" msprop:Generator_RowEvArgName="view_PlanAccionesPrevencionRowChangeEvent" msprop:Generator_RowEvHandlerName="view_PlanAccionesPrevencionRowChangeEventHandler" msprop:Generator_TableClassName="view_PlanAccionesPrevencionDataTable" msprop:Generator_TableVarName="tableview_PlanAccionesPrevencion" msprop:Generator_RowDeletingName="view_PlanAccionesPrevencionRowDeleting" msprop:Generator_TablePropName="view_PlanAccionesPrevencion">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PlanificadorNombre" msprop:Generator_UserColumnName="PlanificadorNombre" msprop:Generator_ColumnVarNameInTable="columnPlanificadorNombre" msprop:Generator_ColumnPropNameInRow="PlanificadorNombre" msprop:Generator_ColumnPropNameInTable="PlanificadorNombreColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EjecutaNombre" msprop:Generator_UserColumnName="EjecutaNombre" msprop:Generator_ColumnVarNameInTable="columnEjecutaNombre" msprop:Generator_ColumnPropNameInRow="EjecutaNombre" msprop:Generator_ColumnPropNameInTable="EjecutaNombreColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ResponsableNombre" msprop:Generator_UserColumnName="ResponsableNombre" msprop:Generator_ColumnVarNameInTable="columnResponsableNombre" msprop:Generator_ColumnPropNameInRow="ResponsableNombre" msprop:Generator_ColumnPropNameInTable="ResponsableNombreColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NID" msprop:Generator_UserColumnName="NID" msprop:Generator_ColumnVarNameInTable="columnNID" msprop:Generator_ColumnPropNameInRow="NID" msprop:Generator_ColumnPropNameInTable="NIDColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlanID" msprop:Generator_UserColumnName="PlanID" msprop:Generator_ColumnVarNameInTable="columnPlanID" msprop:Generator_ColumnPropNameInRow="PlanID" msprop:Generator_ColumnPropNameInTable="PlanIDColumn" type="xs:int" />
+              <xs:element name="AnioID" msprop:Generator_UserColumnName="AnioID" msprop:Generator_ColumnVarNameInTable="columnAnioID" msprop:Generator_ColumnPropNameInRow="AnioID" msprop:Generator_ColumnPropNameInTable="AnioIDColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaPlanificada" msprop:Generator_UserColumnName="FechaPlanificada" msprop:Generator_ColumnVarNameInTable="columnFechaPlanificada" msprop:Generator_ColumnPropNameInRow="FechaPlanificada" msprop:Generator_ColumnPropNameInTable="FechaPlanificadaColumn" type="xs:dateTime" />
+              <xs:element name="Nombre" msprop:Generator_UserColumnName="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaInicio" msprop:Generator_UserColumnName="FechaInicio" msprop:Generator_ColumnVarNameInTable="columnFechaInicio" msprop:Generator_ColumnPropNameInRow="FechaInicio" msprop:Generator_ColumnPropNameInTable="FechaInicioColumn" type="xs:dateTime" />
+              <xs:element name="FechaCierre" msprop:Generator_UserColumnName="FechaCierre" msprop:Generator_ColumnVarNameInTable="columnFechaCierre" msprop:Generator_ColumnPropNameInRow="FechaCierre" msprop:Generator_ColumnPropNameInTable="FechaCierreColumn" type="xs:dateTime" />
+              <xs:element name="Observaciones" msprop:Generator_UserColumnName="Observaciones" msprop:Generator_ColumnVarNameInTable="columnObservaciones" msprop:Generator_ColumnPropNameInRow="Observaciones" msprop:Generator_ColumnPropNameInTable="ObservacionesColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PuntoVulnerable" msprop:Generator_UserColumnName="PuntoVulnerable" msprop:Generator_ColumnVarNameInTable="columnPuntoVulnerable" msprop:Generator_ColumnPropNameInRow="PuntoVulnerable" msprop:Generator_ColumnPropNameInTable="PuntoVulnerableColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Manifestacion" msprop:Generator_UserColumnName="Manifestacion" msprop:Generator_ColumnVarNameInTable="columnManifestacion" msprop:Generator_ColumnPropNameInRow="Manifestacion" msprop:Generator_ColumnPropNameInTable="ManifestacionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cumplimiento" msprop:Generator_UserColumnName="Cumplimiento" msprop:Generator_ColumnVarNameInTable="columnCumplimiento" msprop:Generator_ColumnPropNameInRow="Cumplimiento" msprop:Generator_ColumnPropNameInTable="CumplimientoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EjecucionID" msprop:Generator_UserColumnName="EjecucionID" msprop:Generator_ColumnPropNameInRow="EjecucionID" msprop:Generator_ColumnVarNameInTable="columnEjecucionID" msprop:Generator_ColumnPropNameInTable="EjecucionIDColumn" type="xs:int" />
+              <xs:element name="Riesgos" msprop:Generator_UserColumnName="Riesgos" msprop:Generator_ColumnPropNameInRow="Riesgos" msprop:Generator_ColumnVarNameInTable="columnRiesgos" msprop:Generator_ColumnPropNameInTable="RiesgosColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlanificadorCargo" msprop:Generator_UserColumnName="PlanificadorCargo" msprop:Generator_ColumnPropNameInRow="PlanificadorCargo" msprop:Generator_ColumnVarNameInTable="columnPlanificadorCargo" msprop:Generator_ColumnPropNameInTable="PlanificadorCargoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EjecutaCargo" msprop:Generator_UserColumnName="EjecutaCargo" msprop:Generator_ColumnPropNameInRow="EjecutaCargo" msprop:Generator_ColumnVarNameInTable="columnEjecutaCargo" msprop:Generator_ColumnPropNameInTable="EjecutaCargoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ResponsableCargo" msprop:Generator_UserColumnName="ResponsableCargo" msprop:Generator_ColumnPropNameInRow="ResponsableCargo" msprop:Generator_ColumnVarNameInTable="columnResponsableCargo" msprop:Generator_ColumnPropNameInTable="ResponsableCargoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="view_PlanCapacitacion" msprop:Generator_UserTableName="view_PlanCapacitacion" msprop:Generator_RowDeletedName="view_PlanCapacitacionRowDeleted" msprop:Generator_RowChangedName="view_PlanCapacitacionRowChanged" msprop:Generator_RowClassName="view_PlanCapacitacionRow" msprop:Generator_RowChangingName="view_PlanCapacitacionRowChanging" msprop:Generator_RowEvArgName="view_PlanCapacitacionRowChangeEvent" msprop:Generator_RowEvHandlerName="view_PlanCapacitacionRowChangeEventHandler" msprop:Generator_TableClassName="view_PlanCapacitacionDataTable" msprop:Generator_TableVarName="tableview_PlanCapacitacion" msprop:Generator_RowDeletingName="view_PlanCapacitacionRowDeleting" msprop:Generator_TablePropName="view_PlanCapacitacion">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nombre" msprop:Generator_UserColumnName="Nombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInTable="NombreColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nivel" msprop:Generator_UserColumnName="Nivel" msprop:Generator_ColumnPropNameInRow="Nivel" msprop:Generator_ColumnVarNameInTable="columnNivel" msprop:Generator_ColumnPropNameInTable="NivelColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cargo" msprop:Generator_UserColumnName="Cargo" msprop:Generator_ColumnPropNameInRow="Cargo" msprop:Generator_ColumnVarNameInTable="columnCargo" msprop:Generator_ColumnPropNameInTable="CargoColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EsReserva" msprop:Generator_UserColumnName="EsReserva" msprop:Generator_ColumnPropNameInRow="EsReserva" msprop:Generator_ColumnVarNameInTable="columnEsReserva" msprop:Generator_ColumnPropNameInTable="EsReservaColumn" type="xs:boolean" />
+              <xs:element name="EsCuadro" msprop:Generator_UserColumnName="EsCuadro" msprop:Generator_ColumnPropNameInRow="EsCuadro" msprop:Generator_ColumnVarNameInTable="columnEsCuadro" msprop:Generator_ColumnPropNameInTable="EsCuadroColumn" type="xs:boolean" />
+              <xs:element name="NID_Jefe" msprop:Generator_UserColumnName="NID_Jefe" msprop:Generator_ColumnPropNameInRow="NID_Jefe" msprop:Generator_ColumnVarNameInTable="columnNID_Jefe" msprop:Generator_ColumnPropNameInTable="NID_JefeColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AnioID" msprop:Generator_UserColumnName="AnioID" msprop:Generator_ColumnPropNameInRow="AnioID" msprop:Generator_ColumnVarNameInTable="columnAnioID" msprop:Generator_ColumnPropNameInTable="AnioIDColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NID" msprop:Generator_UserColumnName="NID" msprop:Generator_ColumnPropNameInRow="NID" msprop:Generator_ColumnVarNameInTable="columnNID" msprop:Generator_ColumnPropNameInTable="NIDColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreCompleto" msprop:Generator_UserColumnName="NombreCompleto" msprop:Generator_ColumnPropNameInRow="NombreCompleto" msprop:Generator_ColumnVarNameInTable="columnNombreCompleto" msprop:Generator_ColumnPropNameInTable="NombreCompletoColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreArea" msprop:Generator_UserColumnName="NombreArea" msprop:Generator_ColumnVarNameInTable="columnNombreArea" msprop:Generator_ColumnPropNameInRow="NombreArea" msprop:Generator_ColumnPropNameInTable="NombreAreaColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="view_PlanFormacion" msprop:Generator_UserTableName="view_PlanFormacion" msprop:Generator_RowDeletedName="view_PlanFormacionRowDeleted" msprop:Generator_RowChangedName="view_PlanFormacionRowChanged" msprop:Generator_RowClassName="view_PlanFormacionRow" msprop:Generator_RowChangingName="view_PlanFormacionRowChanging" msprop:Generator_RowEvArgName="view_PlanFormacionRowChangeEvent" msprop:Generator_RowEvHandlerName="view_PlanFormacionRowChangeEventHandler" msprop:Generator_TableClassName="view_PlanFormacionDataTable" msprop:Generator_TableVarName="tableview_PlanFormacion" msprop:Generator_RowDeletingName="view_PlanFormacionRowDeleting" msprop:Generator_TablePropName="view_PlanFormacion">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NombreCompleto" msprop:Generator_UserColumnName="NombreCompleto" msprop:Generator_ColumnPropNameInRow="NombreCompleto" msprop:Generator_ColumnVarNameInTable="columnNombreCompleto" msprop:Generator_ColumnPropNameInTable="NombreCompletoColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cargo" msprop:Generator_UserColumnName="Cargo" msprop:Generator_ColumnPropNameInRow="Cargo" msprop:Generator_ColumnVarNameInTable="columnCargo" msprop:Generator_ColumnPropNameInTable="CargoColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Titulo" msprop:Generator_UserColumnName="Titulo" msprop:Generator_ColumnPropNameInRow="Titulo" msprop:Generator_ColumnVarNameInTable="columnTitulo" msprop:Generator_ColumnPropNameInTable="TituloColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreArea" msprop:Generator_UserColumnName="NombreArea" msprop:Generator_ColumnPropNameInRow="NombreArea" msprop:Generator_ColumnVarNameInTable="columnNombreArea" msprop:Generator_ColumnPropNameInTable="NombreAreaColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nombre" msprop:Generator_UserColumnName="Nombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInTable="NombreColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Objetivo" msprop:Generator_UserColumnName="Objetivo" msprop:Generator_ColumnPropNameInRow="Objetivo" msprop:Generator_ColumnVarNameInTable="columnObjetivo" msprop:Generator_ColumnPropNameInTable="ObjetivoColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EsReservaDesde" msprop:Generator_UserColumnName="EsReservaDesde" msprop:Generator_ColumnPropNameInRow="EsReservaDesde" msprop:Generator_ColumnVarNameInTable="columnEsReservaDesde" msprop:Generator_ColumnPropNameInTable="EsReservaDesdeColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EsReservaDeCargo" msprop:Generator_UserColumnName="EsReservaDeCargo" msprop:Generator_ColumnPropNameInRow="EsReservaDeCargo" msprop:Generator_ColumnVarNameInTable="columnEsReservaDeCargo" msprop:Generator_ColumnPropNameInTable="EsReservaDeCargoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ExperienciaBancaria" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ExperienciaBancaria" msprop:Generator_ColumnPropNameInRow="ExperienciaBancaria" msprop:Generator_ColumnVarNameInTable="columnExperienciaBancaria" msprop:Generator_ColumnPropNameInTable="ExperienciaBancariaColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlanID" msprop:Generator_UserColumnName="PlanID" msprop:Generator_ColumnPropNameInRow="PlanID" msprop:Generator_ColumnVarNameInTable="columnPlanID" msprop:Generator_ColumnPropNameInTable="PlanIDColumn" type="xs:int" />
+              <xs:element name="Anio" msprop:Generator_UserColumnName="Anio" msprop:Generator_ColumnPropNameInRow="Anio" msprop:Generator_ColumnVarNameInTable="columnAnio" msprop:Generator_ColumnPropNameInTable="AnioColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NID" msprop:Generator_UserColumnName="NID" msprop:Generator_ColumnPropNameInRow="NID" msprop:Generator_ColumnVarNameInTable="columnNID" msprop:Generator_ColumnPropNameInTable="NIDColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaInicio" msprop:Generator_UserColumnName="FechaInicio" msprop:Generator_ColumnPropNameInRow="FechaInicio" msprop:Generator_ColumnVarNameInTable="columnFechaInicio" msprop:Generator_ColumnPropNameInTable="FechaInicioColumn" type="xs:dateTime" />
+              <xs:element name="FechaCierre" msprop:Generator_UserColumnName="FechaCierre" msprop:Generator_ColumnPropNameInRow="FechaCierre" msprop:Generator_ColumnVarNameInTable="columnFechaCierre" msprop:Generator_ColumnPropNameInTable="FechaCierreColumn" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MostrarTareasDelMesPorPlanID" msprop:Generator_UserTableName="MostrarTareasDelMesPorPlanID" msprop:Generator_RowDeletedName="MostrarTareasDelMesPorPlanIDRowDeleted" msprop:Generator_RowChangedName="MostrarTareasDelMesPorPlanIDRowChanged" msprop:Generator_RowClassName="MostrarTareasDelMesPorPlanIDRow" msprop:Generator_RowChangingName="MostrarTareasDelMesPorPlanIDRowChanging" msprop:Generator_RowEvArgName="MostrarTareasDelMesPorPlanIDRowChangeEvent" msprop:Generator_RowEvHandlerName="MostrarTareasDelMesPorPlanIDRowChangeEventHandler" msprop:Generator_TableClassName="MostrarTareasDelMesPorPlanIDDataTable" msprop:Generator_TableVarName="tableMostrarTareasDelMesPorPlanID" msprop:Generator_RowDeletingName="MostrarTareasDelMesPorPlanIDRowDeleting" msprop:Generator_TablePropName="MostrarTareasDelMesPorPlanID">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EjecucionID" msprop:Generator_UserColumnName="EjecucionID" msprop:Generator_ColumnVarNameInTable="columnEjecucionID" msprop:Generator_ColumnPropNameInRow="EjecucionID" msprop:Generator_ColumnPropNameInTable="EjecucionIDColumn" type="xs:int" />
+              <xs:element name="PlanID" msprop:Generator_UserColumnName="PlanID" msprop:Generator_ColumnVarNameInTable="columnPlanID" msprop:Generator_ColumnPropNameInRow="PlanID" msprop:Generator_ColumnPropNameInTable="PlanIDColumn" type="xs:int" />
+              <xs:element name="AnioID" msprop:Generator_UserColumnName="AnioID" msprop:Generator_ColumnVarNameInTable="columnAnioID" msprop:Generator_ColumnPropNameInRow="AnioID" msprop:Generator_ColumnPropNameInTable="AnioIDColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NID" msprop:Generator_UserColumnName="NID" msprop:Generator_ColumnVarNameInTable="columnNID" msprop:Generator_ColumnPropNameInRow="NID" msprop:Generator_ColumnPropNameInTable="NIDColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AccionID" msprop:Generator_UserColumnName="AccionID" msprop:Generator_ColumnVarNameInTable="columnAccionID" msprop:Generator_ColumnPropNameInRow="AccionID" msprop:Generator_ColumnPropNameInTable="AccionIDColumn" type="xs:int" />
+              <xs:element name="NombreAccion" msprop:Generator_UserColumnName="NombreAccion" msprop:Generator_ColumnVarNameInTable="columnNombreAccion" msprop:Generator_ColumnPropNameInRow="NombreAccion" msprop:Generator_ColumnPropNameInTable="NombreAccionColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Observaciones" msprop:Generator_UserColumnName="Observaciones" msprop:Generator_ColumnVarNameInTable="columnObservaciones" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="Observaciones" msprop:Generator_ColumnPropNameInTable="ObservacionesColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaPlanificada" msprop:Generator_UserColumnName="FechaPlanificada" msprop:Generator_ColumnVarNameInTable="columnFechaPlanificada" msprop:Generator_ColumnPropNameInRow="FechaPlanificada" msprop:Generator_ColumnPropNameInTable="FechaPlanificadaColumn" type="xs:dateTime" />
+              <xs:element name="FechaCierra" msprop:Generator_UserColumnName="FechaCierra" msprop:Generator_ColumnVarNameInTable="columnFechaCierra" msprop:Generator_ColumnPropNameInRow="FechaCierra" msprop:Generator_ColumnPropNameInTable="FechaCierraColumn" type="xs:dateTime" />
+              <xs:element name="FechaEjecutada" msprop:Generator_UserColumnName="FechaEjecutada" msprop:Generator_ColumnVarNameInTable="columnFechaEjecutada" msprop:Generator_ColumnPropNameInRow="FechaEjecutada" msprop:Generator_ColumnPropNameInTable="FechaEjecutadaColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TipoAccion" msprop:Generator_UserColumnName="TipoAccion" msprop:Generator_ColumnVarNameInTable="columnTipoAccion" msprop:Generator_ColumnPropNameInRow="TipoAccion" msprop:Generator_ColumnPropNameInTable="TipoAccionColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NID_Ejecuta" msprop:Generator_UserColumnName="NID_Ejecuta" msprop:Generator_ColumnVarNameInTable="columnNID_Ejecuta" msprop:Generator_ColumnPropNameInRow="NID_Ejecuta" msprop:Generator_ColumnPropNameInTable="NID_EjecutaColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NID_Responsable" msprop:Generator_UserColumnName="NID_Responsable" msprop:Generator_ColumnVarNameInTable="columnNID_Responsable" msprop:Generator_ColumnPropNameInRow="NID_Responsable" msprop:Generator_ColumnPropNameInTable="NID_ResponsableColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlanificadorNombre" msprop:Generator_UserColumnName="PlanificadorNombre" msprop:Generator_ColumnVarNameInTable="columnPlanificadorNombre" msprop:Generator_ColumnPropNameInRow="PlanificadorNombre" msprop:Generator_ColumnPropNameInTable="PlanificadorNombreColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EjecutaNombre" msprop:Generator_UserColumnName="EjecutaNombre" msprop:Generator_ColumnVarNameInTable="columnEjecutaNombre" msprop:Generator_ColumnPropNameInRow="EjecutaNombre" msprop:Generator_ColumnPropNameInTable="EjecutaNombreColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EjecutaUserName" msprop:Generator_UserColumnName="EjecutaUserName" msprop:Generator_ColumnVarNameInTable="columnEjecutaUserName" msprop:Generator_ColumnPropNameInRow="EjecutaUserName" msprop:Generator_ColumnPropNameInTable="EjecutaUserNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ResponsableNombre" msprop:Generator_UserColumnName="ResponsableNombre" msprop:Generator_ColumnVarNameInTable="columnResponsableNombre" msprop:Generator_ColumnPropNameInRow="ResponsableNombre" msprop:Generator_ColumnPropNameInTable="ResponsableNombreColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaNotificar" msprop:Generator_UserColumnName="FechaNotificar" msprop:Generator_ColumnVarNameInTable="columnFechaNotificar" msprop:Generator_ColumnPropNameInRow="FechaNotificar" msprop:Generator_ColumnPropNameInTable="FechaNotificarColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Notificada" msprop:Generator_UserColumnName="Notificada" msprop:Generator_ColumnVarNameInTable="columnNotificada" msprop:Generator_ColumnPropNameInRow="Notificada" msprop:Generator_ColumnPropNameInTable="NotificadaColumn" type="xs:boolean" />
+              <xs:element name="Aprobada" msprop:Generator_UserColumnName="Aprobada" msprop:Generator_ColumnVarNameInTable="columnAprobada" msprop:Generator_ColumnPropNameInRow="Aprobada" msprop:Generator_ColumnPropNameInTable="AprobadaColumn" type="xs:boolean" />
+              <xs:element name="Estado" msprop:Generator_UserColumnName="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EstadoColor" msprop:Generator_UserColumnName="EstadoColor" msprop:Generator_ColumnVarNameInTable="columnEstadoColor" msprop:Generator_ColumnPropNameInRow="EstadoColor" msprop:Generator_ColumnPropNameInTable="EstadoColorColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TipoID" msprop:Generator_UserColumnName="TipoID" msprop:Generator_ColumnVarNameInTable="columnTipoID" msprop:Generator_ColumnPropNameInRow="TipoID" msprop:Generator_ColumnPropNameInTable="TipoIDColumn" type="xs:short" />
+              <xs:element name="Detalles" msprop:Generator_UserColumnName="Detalles" msprop:Generator_ColumnVarNameInTable="columnDetalles" msprop:Generator_ColumnPropNameInRow="Detalles" msprop:Generator_ColumnPropNameInTable="DetallesColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombrePlan" msprop:Generator_UserColumnName="NombrePlan" msprop:Generator_ColumnVarNameInTable="columnNombrePlan" msprop:Generator_ColumnPropNameInRow="NombrePlan" msprop:Generator_ColumnPropNameInTable="NombrePlanColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EjecutaCargo" msprop:Generator_UserColumnName="EjecutaCargo" msprop:Generator_ColumnPropNameInRow="EjecutaCargo" msprop:Generator_ColumnVarNameInTable="columnEjecutaCargo" msprop:Generator_ColumnPropNameInTable="EjecutaCargoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ResponsableCargo" msprop:Generator_UserColumnName="ResponsableCargo" msprop:Generator_ColumnPropNameInRow="ResponsableCargo" msprop:Generator_ColumnVarNameInTable="columnResponsableCargo" msprop:Generator_ColumnPropNameInTable="ResponsableCargoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlanificadorCargo" msprop:Generator_UserColumnName="PlanificadorCargo" msprop:Generator_ColumnPropNameInRow="PlanificadorCargo" msprop:Generator_ColumnVarNameInTable="columnPlanificadorCargo" msprop:Generator_ColumnPropNameInTable="PlanificadorCargoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OtrosImplicados" msprop:Generator_UserColumnName="OtrosImplicados" msprop:Generator_ColumnVarNameInTable="columnOtrosImplicados" msprop:Generator_ColumnPropNameInRow="OtrosImplicados" msprop:Generator_ColumnPropNameInTable="OtrosImplicadosColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MostrarEjecucionDeTareasPorTrabajador" msprop:Generator_UserTableName="MostrarEjecucionDeTareasPorTrabajador" msprop:Generator_RowDeletedName="MostrarEjecucionDeTareasPorTrabajadorRowDeleted" msprop:Generator_RowChangedName="MostrarEjecucionDeTareasPorTrabajadorRowChanged" msprop:Generator_RowClassName="MostrarEjecucionDeTareasPorTrabajadorRow" msprop:Generator_RowChangingName="MostrarEjecucionDeTareasPorTrabajadorRowChanging" msprop:Generator_RowEvArgName="MostrarEjecucionDeTareasPorTrabajadorRowChangeEvent" msprop:Generator_RowEvHandlerName="MostrarEjecucionDeTareasPorTrabajadorRowChangeEventHandler" msprop:Generator_TableClassName="MostrarEjecucionDeTareasPorTrabajadorDataTable" msprop:Generator_TableVarName="tableMostrarEjecucionDeTareasPorTrabajador" msprop:Generator_RowDeletingName="MostrarEjecucionDeTareasPorTrabajadorRowDeleting" msprop:Generator_TablePropName="MostrarEjecucionDeTareasPorTrabajador">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EjecucionID" msprop:Generator_UserColumnName="EjecucionID" msprop:Generator_ColumnVarNameInTable="columnEjecucionID" msprop:Generator_ColumnPropNameInRow="EjecucionID" msprop:Generator_ColumnPropNameInTable="EjecucionIDColumn" type="xs:int" />
+              <xs:element name="PlanID" msprop:Generator_UserColumnName="PlanID" msprop:Generator_ColumnVarNameInTable="columnPlanID" msprop:Generator_ColumnPropNameInRow="PlanID" msprop:Generator_ColumnPropNameInTable="PlanIDColumn" type="xs:int" />
+              <xs:element name="AnioID" msprop:Generator_UserColumnName="AnioID" msprop:Generator_ColumnVarNameInTable="columnAnioID" msprop:Generator_ColumnPropNameInRow="AnioID" msprop:Generator_ColumnPropNameInTable="AnioIDColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NID" msprop:Generator_UserColumnName="NID" msprop:Generator_ColumnVarNameInTable="columnNID" msprop:Generator_ColumnPropNameInRow="NID" msprop:Generator_ColumnPropNameInTable="NIDColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AccionID" msprop:Generator_UserColumnName="AccionID" msprop:Generator_ColumnVarNameInTable="columnAccionID" msprop:Generator_ColumnPropNameInRow="AccionID" msprop:Generator_ColumnPropNameInTable="AccionIDColumn" type="xs:int" />
+              <xs:element name="NombreAccion" msprop:Generator_UserColumnName="NombreAccion" msprop:Generator_ColumnVarNameInTable="columnNombreAccion" msprop:Generator_ColumnPropNameInRow="NombreAccion" msprop:Generator_ColumnPropNameInTable="NombreAccionColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Observaciones" msprop:Generator_UserColumnName="Observaciones" msprop:Generator_ColumnVarNameInTable="columnObservaciones" msprop:Generator_ColumnPropNameInRow="Observaciones" msprop:Generator_ColumnPropNameInTable="ObservacionesColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaPlanificada" msprop:Generator_UserColumnName="FechaPlanificada" msprop:Generator_ColumnVarNameInTable="columnFechaPlanificada" msprop:Generator_ColumnPropNameInRow="FechaPlanificada" msprop:Generator_ColumnPropNameInTable="FechaPlanificadaColumn" type="xs:dateTime" />
+              <xs:element name="FechaCierra" msprop:Generator_UserColumnName="FechaCierra" msprop:Generator_ColumnVarNameInTable="columnFechaCierra" msprop:Generator_ColumnPropNameInRow="FechaCierra" msprop:Generator_ColumnPropNameInTable="FechaCierraColumn" type="xs:dateTime" />
+              <xs:element name="FechaEjecutada" msprop:Generator_UserColumnName="FechaEjecutada" msprop:Generator_ColumnVarNameInTable="columnFechaEjecutada" msprop:Generator_ColumnPropNameInRow="FechaEjecutada" msprop:Generator_ColumnPropNameInTable="FechaEjecutadaColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TipoAccion" msprop:Generator_UserColumnName="TipoAccion" msprop:Generator_ColumnVarNameInTable="columnTipoAccion" msprop:Generator_ColumnPropNameInRow="TipoAccion" msprop:Generator_ColumnPropNameInTable="TipoAccionColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NID_Ejecuta" msprop:Generator_UserColumnName="NID_Ejecuta" msprop:Generator_ColumnVarNameInTable="columnNID_Ejecuta" msprop:Generator_ColumnPropNameInRow="NID_Ejecuta" msprop:Generator_ColumnPropNameInTable="NID_EjecutaColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NID_Responsable" msprop:Generator_UserColumnName="NID_Responsable" msprop:Generator_ColumnVarNameInTable="columnNID_Responsable" msprop:Generator_ColumnPropNameInRow="NID_Responsable" msprop:Generator_ColumnPropNameInTable="NID_ResponsableColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlanificadorNombre" msprop:Generator_UserColumnName="PlanificadorNombre" msprop:Generator_ColumnVarNameInTable="columnPlanificadorNombre" msprop:Generator_ColumnPropNameInRow="PlanificadorNombre" msprop:Generator_ColumnPropNameInTable="PlanificadorNombreColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EjecutaNombre" msprop:Generator_UserColumnName="EjecutaNombre" msprop:Generator_ColumnVarNameInTable="columnEjecutaNombre" msprop:Generator_ColumnPropNameInRow="EjecutaNombre" msprop:Generator_ColumnPropNameInTable="EjecutaNombreColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EjecutaUserName" msprop:Generator_UserColumnName="EjecutaUserName" msprop:Generator_ColumnVarNameInTable="columnEjecutaUserName" msprop:Generator_ColumnPropNameInRow="EjecutaUserName" msprop:Generator_ColumnPropNameInTable="EjecutaUserNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ResponsableNombre" msprop:Generator_UserColumnName="ResponsableNombre" msprop:Generator_ColumnVarNameInTable="columnResponsableNombre" msprop:Generator_ColumnPropNameInRow="ResponsableNombre" msprop:Generator_ColumnPropNameInTable="ResponsableNombreColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaNotificar" msprop:Generator_UserColumnName="FechaNotificar" msprop:Generator_ColumnVarNameInTable="columnFechaNotificar" msprop:Generator_ColumnPropNameInRow="FechaNotificar" msprop:Generator_ColumnPropNameInTable="FechaNotificarColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Notificada" msprop:Generator_UserColumnName="Notificada" msprop:Generator_ColumnVarNameInTable="columnNotificada" msprop:Generator_ColumnPropNameInRow="Notificada" msprop:Generator_ColumnPropNameInTable="NotificadaColumn" type="xs:boolean" />
+              <xs:element name="Aprobada" msprop:Generator_UserColumnName="Aprobada" msprop:Generator_ColumnVarNameInTable="columnAprobada" msprop:Generator_ColumnPropNameInRow="Aprobada" msprop:Generator_ColumnPropNameInTable="AprobadaColumn" type="xs:boolean" />
+              <xs:element name="Estado" msprop:Generator_UserColumnName="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EstadoColor" msprop:Generator_UserColumnName="EstadoColor" msprop:Generator_ColumnVarNameInTable="columnEstadoColor" msprop:Generator_ColumnPropNameInRow="EstadoColor" msprop:Generator_ColumnPropNameInTable="EstadoColorColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TipoID" msprop:Generator_UserColumnName="TipoID" msprop:Generator_ColumnVarNameInTable="columnTipoID" msprop:Generator_ColumnPropNameInRow="TipoID" msprop:Generator_ColumnPropNameInTable="TipoIDColumn" type="xs:short" />
+              <xs:element name="Detalles" msprop:Generator_UserColumnName="Detalles" msprop:Generator_ColumnVarNameInTable="columnDetalles" msprop:Generator_ColumnPropNameInRow="Detalles" msprop:Generator_ColumnPropNameInTable="DetallesColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombrePlan" msprop:Generator_UserColumnName="NombrePlan" msprop:Generator_ColumnVarNameInTable="columnNombrePlan" msprop:Generator_ColumnPropNameInRow="NombrePlan" msprop:Generator_ColumnPropNameInTable="NombrePlanColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NID_Jefe" msprop:Generator_UserColumnName="NID_Jefe" msprop:Generator_ColumnVarNameInTable="columnNID_Jefe" msprop:Generator_ColumnPropNameInRow="NID_Jefe" msprop:Generator_ColumnPropNameInTable="NID_JefeColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EjecutaCargo" msprop:Generator_UserColumnName="EjecutaCargo" msprop:Generator_ColumnPropNameInRow="EjecutaCargo" msprop:Generator_ColumnVarNameInTable="columnEjecutaCargo" msprop:Generator_ColumnPropNameInTable="EjecutaCargoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ResponsableCargo" msprop:Generator_UserColumnName="ResponsableCargo" msprop:Generator_ColumnPropNameInRow="ResponsableCargo" msprop:Generator_ColumnVarNameInTable="columnResponsableCargo" msprop:Generator_ColumnPropNameInTable="ResponsableCargoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlanificadorCargo" msprop:Generator_UserColumnName="PlanificadorCargo" msprop:Generator_ColumnPropNameInRow="PlanificadorCargo" msprop:Generator_ColumnVarNameInTable="columnPlanificadorCargo" msprop:Generator_ColumnPropNameInTable="PlanificadorCargoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OtrosImplicados" msprop:Generator_UserColumnName="OtrosImplicados" msprop:Generator_ColumnVarNameInTable="columnOtrosImplicados" msprop:Generator_ColumnPropNameInRow="OtrosImplicados" msprop:Generator_ColumnPropNameInTable="OtrosImplicadosColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="view_EjecucionDeTareas" msprop:Generator_UserTableName="view_EjecucionDeTareas" msprop:Generator_RowDeletedName="view_EjecucionDeTareasRowDeleted" msprop:Generator_RowChangedName="view_EjecucionDeTareasRowChanged" msprop:Generator_RowClassName="view_EjecucionDeTareasRow" msprop:Generator_RowChangingName="view_EjecucionDeTareasRowChanging" msprop:Generator_RowEvArgName="view_EjecucionDeTareasRowChangeEvent" msprop:Generator_RowEvHandlerName="view_EjecucionDeTareasRowChangeEventHandler" msprop:Generator_TableClassName="view_EjecucionDeTareasDataTable" msprop:Generator_TableVarName="tableview_EjecucionDeTareas" msprop:Generator_RowDeletingName="view_EjecucionDeTareasRowDeleting" msprop:Generator_TablePropName="view_EjecucionDeTareas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EjecucionID" msprop:Generator_UserColumnName="EjecucionID" msprop:Generator_ColumnPropNameInRow="EjecucionID" msprop:Generator_ColumnVarNameInTable="columnEjecucionID" msprop:Generator_ColumnPropNameInTable="EjecucionIDColumn" type="xs:int" />
+              <xs:element name="PlanID" msprop:Generator_UserColumnName="PlanID" msprop:Generator_ColumnPropNameInRow="PlanID" msprop:Generator_ColumnVarNameInTable="columnPlanID" msprop:Generator_ColumnPropNameInTable="PlanIDColumn" type="xs:int" />
+              <xs:element name="AnioID" msprop:Generator_UserColumnName="AnioID" msprop:Generator_ColumnPropNameInRow="AnioID" msprop:Generator_ColumnVarNameInTable="columnAnioID" msprop:Generator_ColumnPropNameInTable="AnioIDColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NID" msprop:Generator_UserColumnName="NID" msprop:Generator_ColumnPropNameInRow="NID" msprop:Generator_ColumnVarNameInTable="columnNID" msprop:Generator_ColumnPropNameInTable="NIDColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AccionID" msprop:Generator_UserColumnName="AccionID" msprop:Generator_ColumnPropNameInRow="AccionID" msprop:Generator_ColumnVarNameInTable="columnAccionID" msprop:Generator_ColumnPropNameInTable="AccionIDColumn" type="xs:int" />
+              <xs:element name="NombreAccion" msprop:Generator_UserColumnName="NombreAccion" msprop:Generator_ColumnPropNameInRow="NombreAccion" msprop:Generator_ColumnVarNameInTable="columnNombreAccion" msprop:Generator_ColumnPropNameInTable="NombreAccionColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Observaciones" msprop:Generator_UserColumnName="Observaciones" msprop:Generator_ColumnPropNameInRow="Observaciones" msprop:Generator_ColumnVarNameInTable="columnObservaciones" msprop:Generator_ColumnPropNameInTable="ObservacionesColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaPlanificada" msprop:Generator_UserColumnName="FechaPlanificada" msprop:Generator_ColumnPropNameInRow="FechaPlanificada" msprop:Generator_ColumnVarNameInTable="columnFechaPlanificada" msprop:Generator_ColumnPropNameInTable="FechaPlanificadaColumn" type="xs:dateTime" />
+              <xs:element name="FechaCierra" msprop:Generator_UserColumnName="FechaCierra" msprop:Generator_ColumnPropNameInRow="FechaCierra" msprop:Generator_ColumnVarNameInTable="columnFechaCierra" msprop:Generator_ColumnPropNameInTable="FechaCierraColumn" type="xs:dateTime" />
+              <xs:element name="FechaEjecutada" msprop:Generator_UserColumnName="FechaEjecutada" msprop:Generator_ColumnPropNameInRow="FechaEjecutada" msprop:Generator_ColumnVarNameInTable="columnFechaEjecutada" msprop:Generator_ColumnPropNameInTable="FechaEjecutadaColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TipoAccion" msprop:Generator_UserColumnName="TipoAccion" msprop:Generator_ColumnPropNameInRow="TipoAccion" msprop:Generator_ColumnVarNameInTable="columnTipoAccion" msprop:Generator_ColumnPropNameInTable="TipoAccionColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NID_Ejecuta" msprop:Generator_UserColumnName="NID_Ejecuta" msprop:Generator_ColumnPropNameInRow="NID_Ejecuta" msprop:Generator_ColumnVarNameInTable="columnNID_Ejecuta" msprop:Generator_ColumnPropNameInTable="NID_EjecutaColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NID_Responsable" msprop:Generator_UserColumnName="NID_Responsable" msprop:Generator_ColumnPropNameInRow="NID_Responsable" msprop:Generator_ColumnVarNameInTable="columnNID_Responsable" msprop:Generator_ColumnPropNameInTable="NID_ResponsableColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlanificadorNombre" msprop:Generator_UserColumnName="PlanificadorNombre" msprop:Generator_ColumnPropNameInRow="PlanificadorNombre" msprop:Generator_ColumnVarNameInTable="columnPlanificadorNombre" msprop:Generator_ColumnPropNameInTable="PlanificadorNombreColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EjecutaNombre" msprop:Generator_UserColumnName="EjecutaNombre" msprop:Generator_ColumnPropNameInRow="EjecutaNombre" msprop:Generator_ColumnVarNameInTable="columnEjecutaNombre" msprop:Generator_ColumnPropNameInTable="EjecutaNombreColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EjecutaUserName" msprop:Generator_UserColumnName="EjecutaUserName" msprop:Generator_ColumnPropNameInRow="EjecutaUserName" msprop:Generator_ColumnVarNameInTable="columnEjecutaUserName" msprop:Generator_ColumnPropNameInTable="EjecutaUserNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ResponsableNombre" msprop:Generator_UserColumnName="ResponsableNombre" msprop:Generator_ColumnPropNameInRow="ResponsableNombre" msprop:Generator_ColumnVarNameInTable="columnResponsableNombre" msprop:Generator_ColumnPropNameInTable="ResponsableNombreColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaNotificar" msprop:Generator_UserColumnName="FechaNotificar" msprop:Generator_ColumnPropNameInRow="FechaNotificar" msprop:Generator_ColumnVarNameInTable="columnFechaNotificar" msprop:Generator_ColumnPropNameInTable="FechaNotificarColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Notificada" msprop:Generator_UserColumnName="Notificada" msprop:Generator_ColumnPropNameInRow="Notificada" msprop:Generator_ColumnVarNameInTable="columnNotificada" msprop:Generator_ColumnPropNameInTable="NotificadaColumn" type="xs:boolean" />
+              <xs:element name="Aprobada" msprop:Generator_UserColumnName="Aprobada" msprop:Generator_ColumnPropNameInRow="Aprobada" msprop:Generator_ColumnVarNameInTable="columnAprobada" msprop:Generator_ColumnPropNameInTable="AprobadaColumn" type="xs:boolean" />
+              <xs:element name="Estado" msprop:Generator_UserColumnName="Estado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EstadoColor" msprop:Generator_UserColumnName="EstadoColor" msprop:Generator_ColumnPropNameInRow="EstadoColor" msprop:Generator_ColumnVarNameInTable="columnEstadoColor" msprop:Generator_ColumnPropNameInTable="EstadoColorColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TipoID" msprop:Generator_UserColumnName="TipoID" msprop:Generator_ColumnPropNameInRow="TipoID" msprop:Generator_ColumnVarNameInTable="columnTipoID" msprop:Generator_ColumnPropNameInTable="TipoIDColumn" type="xs:short" />
+              <xs:element name="Detalles" msprop:Generator_UserColumnName="Detalles" msprop:Generator_ColumnPropNameInRow="Detalles" msprop:Generator_ColumnVarNameInTable="columnDetalles" msprop:Generator_ColumnPropNameInTable="DetallesColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombrePlan" msprop:Generator_UserColumnName="NombrePlan" msprop:Generator_ColumnPropNameInRow="NombrePlan" msprop:Generator_ColumnVarNameInTable="columnNombrePlan" msprop:Generator_ColumnPropNameInTable="NombrePlanColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EjecutaCargo" msprop:Generator_UserColumnName="EjecutaCargo" msprop:Generator_ColumnPropNameInRow="EjecutaCargo" msprop:Generator_ColumnVarNameInTable="columnEjecutaCargo" msprop:Generator_ColumnPropNameInTable="EjecutaCargoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ResponsableCargo" msprop:Generator_UserColumnName="ResponsableCargo" msprop:Generator_ColumnPropNameInRow="ResponsableCargo" msprop:Generator_ColumnVarNameInTable="columnResponsableCargo" msprop:Generator_ColumnPropNameInTable="ResponsableCargoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlanificadorCargo" msprop:Generator_UserColumnName="PlanificadorCargo" msprop:Generator_ColumnPropNameInRow="PlanificadorCargo" msprop:Generator_ColumnVarNameInTable="columnPlanificadorCargo" msprop:Generator_ColumnPropNameInTable="PlanificadorCargoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OtrosImplicados" msprop:Generator_UserColumnName="OtrosImplicados" msprop:Generator_ColumnPropNameInRow="OtrosImplicados" msprop:Generator_ColumnVarNameInTable="columnOtrosImplicados" msprop:Generator_ColumnPropNameInTable="OtrosImplicadosColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EsPrincipal" msprop:Generator_UserColumnName="EsPrincipal" msprop:Generator_ColumnPropNameInRow="EsPrincipal" msprop:Generator_ColumnVarNameInTable="columnEsPrincipal" msprop:Generator_ColumnPropNameInTable="EsPrincipalColumn" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="View_CumplimientoEjecucion" msprop:Generator_UserTableName="View_CumplimientoEjecucion" msprop:Generator_RowDeletedName="View_CumplimientoEjecucionRowDeleted" msprop:Generator_RowChangedName="View_CumplimientoEjecucionRowChanged" msprop:Generator_RowClassName="View_CumplimientoEjecucionRow" msprop:Generator_RowChangingName="View_CumplimientoEjecucionRowChanging" msprop:Generator_RowEvArgName="View_CumplimientoEjecucionRowChangeEvent" msprop:Generator_RowEvHandlerName="View_CumplimientoEjecucionRowChangeEventHandler" msprop:Generator_TableClassName="View_CumplimientoEjecucionDataTable" msprop:Generator_TableVarName="tableView_CumplimientoEjecucion" msprop:Generator_RowDeletingName="View_CumplimientoEjecucionRowDeleting" msprop:Generator_TablePropName="View_CumplimientoEjecucion">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EjecucionID" msprop:Generator_UserColumnName="EjecucionID" msprop:Generator_ColumnPropNameInRow="EjecucionID" msprop:Generator_ColumnVarNameInTable="columnEjecucionID" msprop:Generator_ColumnPropNameInTable="EjecucionIDColumn" type="xs:int" />
+              <xs:element name="PlanID" msprop:Generator_UserColumnName="PlanID" msprop:Generator_ColumnPropNameInRow="PlanID" msprop:Generator_ColumnVarNameInTable="columnPlanID" msprop:Generator_ColumnPropNameInTable="PlanIDColumn" type="xs:int" />
+              <xs:element name="AnioID" msprop:Generator_UserColumnName="AnioID" msprop:Generator_ColumnPropNameInRow="AnioID" msprop:Generator_ColumnVarNameInTable="columnAnioID" msprop:Generator_ColumnPropNameInTable="AnioIDColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NID" msprop:Generator_UserColumnName="NID" msprop:Generator_ColumnPropNameInRow="NID" msprop:Generator_ColumnVarNameInTable="columnNID" msprop:Generator_ColumnPropNameInTable="NIDColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AccionID" msprop:Generator_UserColumnName="AccionID" msprop:Generator_ColumnPropNameInRow="AccionID" msprop:Generator_ColumnVarNameInTable="columnAccionID" msprop:Generator_ColumnPropNameInTable="AccionIDColumn" type="xs:int" />
+              <xs:element name="Observaciones" msprop:Generator_UserColumnName="Observaciones" msprop:Generator_ColumnPropNameInRow="Observaciones" msprop:Generator_ColumnVarNameInTable="columnObservaciones" msprop:Generator_ColumnPropNameInTable="ObservacionesColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaPlanificada" msprop:Generator_UserColumnName="FechaPlanificada" msprop:Generator_ColumnPropNameInRow="FechaPlanificada" msprop:Generator_ColumnVarNameInTable="columnFechaPlanificada" msprop:Generator_ColumnPropNameInTable="FechaPlanificadaColumn" type="xs:dateTime" />
+              <xs:element name="FechaCierra" msprop:Generator_UserColumnName="FechaCierra" msprop:Generator_ColumnPropNameInRow="FechaCierra" msprop:Generator_ColumnVarNameInTable="columnFechaCierra" msprop:Generator_ColumnPropNameInTable="FechaCierraColumn" type="xs:dateTime" />
+              <xs:element name="FechaEjecutada" msprop:Generator_UserColumnName="FechaEjecutada" msprop:Generator_ColumnPropNameInRow="FechaEjecutada" msprop:Generator_ColumnVarNameInTable="columnFechaEjecutada" msprop:Generator_ColumnPropNameInTable="FechaEjecutadaColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NID_Ejecuta" msprop:Generator_UserColumnName="NID_Ejecuta" msprop:Generator_ColumnPropNameInRow="NID_Ejecuta" msprop:Generator_ColumnVarNameInTable="columnNID_Ejecuta" msprop:Generator_ColumnPropNameInTable="NID_EjecutaColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NID_Responsable" msprop:Generator_UserColumnName="NID_Responsable" msprop:Generator_ColumnPropNameInRow="NID_Responsable" msprop:Generator_ColumnVarNameInTable="columnNID_Responsable" msprop:Generator_ColumnPropNameInTable="NID_ResponsableColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlanificadorNombre" msprop:Generator_UserColumnName="PlanificadorNombre" msprop:Generator_ColumnPropNameInRow="PlanificadorNombre" msprop:Generator_ColumnVarNameInTable="columnPlanificadorNombre" msprop:Generator_ColumnPropNameInTable="PlanificadorNombreColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EjecutaNombre" msprop:Generator_UserColumnName="EjecutaNombre" msprop:Generator_ColumnPropNameInRow="EjecutaNombre" msprop:Generator_ColumnVarNameInTable="columnEjecutaNombre" msprop:Generator_ColumnPropNameInTable="EjecutaNombreColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ResponsableNombre" msprop:Generator_UserColumnName="ResponsableNombre" msprop:Generator_ColumnPropNameInRow="ResponsableNombre" msprop:Generator_ColumnVarNameInTable="columnResponsableNombre" msprop:Generator_ColumnPropNameInTable="ResponsableNombreColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Estado" msprop:Generator_UserColumnName="Estado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Detalles" msprop:Generator_UserColumnName="Detalles" msprop:Generator_ColumnPropNameInRow="Detalles" msprop:Generator_ColumnVarNameInTable="columnDetalles" msprop:Generator_ColumnPropNameInTable="DetallesColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EjecutaCargo" msprop:Generator_UserColumnName="EjecutaCargo" msprop:Generator_ColumnPropNameInRow="EjecutaCargo" msprop:Generator_ColumnVarNameInTable="columnEjecutaCargo" msprop:Generator_ColumnPropNameInTable="EjecutaCargoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ResponsableCargo" msprop:Generator_UserColumnName="ResponsableCargo" msprop:Generator_ColumnPropNameInRow="ResponsableCargo" msprop:Generator_ColumnVarNameInTable="columnResponsableCargo" msprop:Generator_ColumnPropNameInTable="ResponsableCargoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlanificadorCargo" msprop:Generator_UserColumnName="PlanificadorCargo" msprop:Generator_ColumnPropNameInRow="PlanificadorCargo" msprop:Generator_ColumnVarNameInTable="columnPlanificadorCargo" msprop:Generator_ColumnPropNameInTable="PlanificadorCargoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreArea" msprop:Generator_UserColumnName="NombreArea" msprop:Generator_ColumnPropNameInRow="NombreArea" msprop:Generator_ColumnVarNameInTable="columnNombreArea" msprop:Generator_ColumnPropNameInTable="NombreAreaColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:view_PlanAccionesPrevencion" />
+      <xs:field xpath="mstns:EjecucionID" />
+    </xs:unique>
+    <xs:unique name="view_PlanCapacitacion_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:view_PlanCapacitacion" />
+      <xs:field xpath="mstns:NID_Jefe" />
+      <xs:field xpath="mstns:NID" />
+    </xs:unique>
+    <xs:unique name="view_PlanFormacion_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:view_PlanFormacion" />
+      <xs:field xpath="mstns:PlanID" />
+      <xs:field xpath="mstns:Anio" />
+      <xs:field xpath="mstns:NID" />
+    </xs:unique>
+    <xs:unique name="View_CumplimientoEjecucion_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:View_CumplimientoEjecucion" />
+      <xs:field xpath="mstns:EjecucionID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="GestorTareas.master.cs" Inherits="GestorTareas"   %>
+<%@ Register assembly="DevExpress.Web.v8.2, Version=8.2.3.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" namespace="DevExpress.Web.ASPxMenu" tagprefix="dxm" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
+<head id="Head1" runat="server">
+    <title>Planificador Online</title>
+    <link href="Styles/WebPlanner_Styles.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8" />
+    <link href="Styles/DayPilot_Styles.css" rel="Stylesheet" type="text/css" media="screen" charset="utf-8" />
+    <style type="text/css" media="screen">
+.PanelEstadistica
+{
+width:40%;
+float:left;
+}
+</style>
+</head>
+<body>
+<form id="form1" runat="server" accept-charset="UTF-8" >  
+<div id="MainFrame">
+ <div id="Banner">
+  <div id="Title">        
+    <asp:Image CssClass="Logo" ID="Logo" ImageUrl="~/Images/Logo.gif" AlternateText="Logo" runat="server" />    
+    <h2>PlanPlus</h2>
+    <h3>Sistema de Planificación Corporativo</h3> 
+    <h4>Actualización 06.11.2012</h4>
+  </div>
+  <div id="UserInfo">
+  <asp:ContentPlaceHolder ID="ContenidoOpcional" runat="server">  
+  </asp:ContentPlaceHolder>
+  <asp:LoginView ID="LoginViewUser" runat="server">
+      <LoggedInTemplate>
+      <table width="45%" style="float:right;"  >
+       <tr>
+        <td align="right" style="width: 30%; padding-right: 3px;" colspan="1">
+            Usuario</td>
+        <td align="left" style="width: 70%">
+            <asp:LoginName ID="Site_LoginName" runat="server" CssClass="label" Font-Bold="True" ForeColor="White" />
+        </td>
+       </tr>
+       <tr>
+        <td align="right" style="width: 30%; padding-right: 3px;">
+            Permisos</td>
+        <td align="left" style="width: 70%"><asp:Label ID="Label_Role" runat="server" Text="Label" CssClass="label" Font-Bold="True" ForeColor="White"></asp:Label></td>
+       </tr>
+       <tr>
+        <td align="right" style="width: 30%; padding-right: 3px;">Área </td>
+        <td align="left" style="width: 70%"><asp:Label ID="Label_Area" runat="server" Text="Label" CssClass="label" Font-Bold="True" ForeColor="White"></asp:Label></td>
+       </tr>
+          <tr>
+              <td align="center" colspan="2">
+               <asp:HyperLink runat="server" ID="MisDatos" NavigateUrl="~/AllUsers/UserConfig.aspx" >Mis Datos</asp:HyperLink>
+                  &nbsp;
+               <asp:LoginStatus ID="MySiteLoginStatus" runat="server" LoginText="Entrar" 
+                      LogoutPageUrl="~/Index.aspx" LogoutText="Salir" 
+                      LogoutAction="RedirectToLoginPage" onloggedout="LoginStatus1_LoggedOut" />
+              </td>
+          </tr>
+      </table>
+      </LoggedInTemplate>
+      <AnonymousTemplate>
+          
+      </AnonymousTemplate>
+      </asp:LoginView>  &nbsp;</div>  
+  </div>
+ <div id="NavBar"> 
+   <asp:LoginView ID="LoginViewMenu" runat="server">
+    <LoggedInTemplate>         
+      <asp:SiteMapPath id="SiteMapPath_Menu" runat="server" PathSeparator="   >   " CssClass="NavBarMenu">
+            <PathSeparatorStyle Font-Bold="True" ForeColor="#003366"></PathSeparatorStyle>            
+        </asp:SiteMapPath>     
+        <div class="Noticias">       
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder_Noticias" runat="server" >  
+            </asp:ContentPlaceHolder>
+        </div>
+    </LoggedInTemplate>      
+  </asp:LoginView>
+  
+  </div>   
+  <div id="Content">       
+  <div id="FormLogin">      
+        <asp:contentplaceholder id="Contenido" runat="server">
+        </asp:contentplaceholder>        
+  </div>    
+    </div>  
+ <!-- Acá empieza el pie de página -->
+ <div id="Footer"> 
+     Idea Original:<a href="mailto:oleg@dpcf.bandec.cu?subject=Usuarios del Planificador Online">Ing. Francisco M. Crespo Glez.</a> Diseño y Desarrollo: <a href="mailto:josias@dpcf.bandec.cu?subject=Usuarios del Planificador Online">Ing Josías Hernández Pérez.</a> <br/>
+     Banco de Crédito y Comercio. Dirección Provincial Cienfuegos.
+     Departamento de Automatización y Procedimientos.2010.     
+ </div>
+</div>    
+</form> 
+</body>
+</html>

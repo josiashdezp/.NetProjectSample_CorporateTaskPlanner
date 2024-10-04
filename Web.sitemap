@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="Index.aspx" title="Inicio"  description="">
+		<siteMapNode url="~/Planning/PlanMonthView.aspx" title="Plan de trabajo" >			
+				<siteMapNode url="~/Planning/PlanMain.aspx" title="Mis planes de trabajo" />
+				<siteMapNode url="~/Planning/PlanAddEvent.aspx" title="Adicionar tareas" />
+				<siteMapNode url="~/Planning/TasksSearch.aspx" title="Buscar tareas programadas" />
+				<siteMapNode url="~/Planning/PlanPrint.aspx" title="Impresión de planes">
+					<siteMapNode url="" title="Plan de Formación Individual" />
+					<siteMapNode url="" title="Plan de Prevención" />
+					<siteMapNode url="" title="Plan de Plan de Visitas" />
+					<siteMapNode url="" title="Plan de Plan de Actos y Eventos" />
+				</siteMapNode>
+				<siteMapNode url="~/Planning/PlanPrintAll.aspx" title="Imprimir plan" />			
+		</siteMapNode>
+		<siteMapNode url="~/Lists/Positions.aspx" title="Cargos"  description="" />
+		<siteMapNode url="~/Lists/Degrees.aspx" title="Títulos académicos"  description="" />
+		<siteMapNode url="~/Lists/Areas.aspx" title="Áreas de trabajo" description="" />
+		<siteMapNode url="~/Lists/Actions.aspx" title="Tareas"  description="" />
+		<siteMapNode url="~/Lists/ObjetivosFormacion.aspx" title="Objetivos de formación"  description="" />		
+		<siteMapNode url="" title="Control y Evaluación del Trabajo"  description="">
+			<siteMapNode url="~/Manage/ManagePlanning.aspx" title="Cumplimiento de tareas por trabajador"  description="" roles="Jefe" />			
+		</siteMapNode>
+		<siteMapNode url="~/Admin/AdminUsers.aspx" title="Administración de usuarios">
+			<siteMapNode url="~/Admin/EditUser.aspx" title="Modificar datos del usuario"  description="" />
+			<siteMapNode url="~/Admin/AddUser.aspx" title="Adicionar usuario"/>
+		</siteMapNode>
+		<siteMapNode url="~/Admin/SysConfig.aspx" title="Configuración del Sistema" roles="Administrador" />					
+		<siteMapNode url="~/AllUsers/UserConfig.aspx" title="Mis datos personales"  description="" />
+    </siteMapNode>	
+</siteMap>
